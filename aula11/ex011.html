@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual é sua nacionalidade</h1>
+    <input type="text" name="txtp" id="txtp" placeholder="Digite o nome do seu país">
+    <input type="button" name="bnt" id="bnt" value="Verificar" onclick="pais()">
+    <div id="res"></div>
+
+    <script>
+        function pais(){
+            var country = document.querySelector('input#txtp')
+            var res = document.querySelector('div#res')
+
+            if (country.value != 'Brasil'){
+                res.innerHTML = '<p>Você é <strong>estrangeiro</storng></p>'
+            } else {
+                res.innerHTML = '<p>Você é <strong>Brasileiro</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
