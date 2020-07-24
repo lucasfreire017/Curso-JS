@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo</title>
+    <title>Contador</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -12,11 +12,18 @@
     </header>
     <section>
         <div>
-            Div 1
+            <p>Início:
+                <input type="number" id="i_num" name="i_num">
+            </p>
+            <p>Fim: 
+                <input type="number" id="f_num" name="f_num">
+            </p>
+            <p>Passo:
+                <input type="number" id="p_num" name="p_num">
+            </p>
+            <input type="button" value="Contar" id="bnt" onclick="count()">
         </div>
-        <div>
-            Div 2
-        </div>
+        <div id="res"></div>
     </section>
     <footer>
         <p>&copy; CursoemVídeo</p>
