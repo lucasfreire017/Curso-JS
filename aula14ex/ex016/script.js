@@ -3,9 +3,6 @@ function count(){
     var fim = document.querySelector('input#f_num').value
     var passo = document.querySelector('input#p_num').value
     var res = document.getElementById('res')
-    var resposta = ''
-    
-    var count = 1
     
     if(init.length == 0 || fim.length == 0 || passo.length == 0){
         alert('[ERRO] Contém espaços em branco')
