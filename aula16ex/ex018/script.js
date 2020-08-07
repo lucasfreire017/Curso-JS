@@ -15,6 +15,7 @@ function isNumero(n){
 // Não ter repetição de valores na lista
 function inLista(n, l){
     if(l.indexOf(Number(n)) != -1){
+        console.log(l.indexOf(Number(n)))
         return true
     } else {
         return false
@@ -27,11 +28,36 @@ function adcionar(){
        valores.push(num.value)
        item.text = `Valor ${num.value} adicionado`
        lista.appendChild(item)
+       num.value = ''
     } else {
         window.alert('Valor inválido ou já encontrado na lista.')
     }
 }
 
 function final(){
-    res.innerHTML = `<p>Ao todo temos ${valores.length} númeoros cadastrados.</p>`
+    //Variável com maior valor digitado
+    let maior = Math.max.apply(null, valores)
+
+    //Variável com menor valor digitado
+    let menor = Math.min.apply(null, valores)
+
+    //Soma de todos os númeors
+    let soma = 0
+    for(let c = 0; c < valores.length; c++){
+        soma += parseInt(valores[c])
+    }
+    
+    //Calculo de média
+    let total = 0
+    for(let c = 0; c< valores.length; c++){
+        total += parseInt(valores[c])
+    }
+    let media = (total/valores.length)
+
+    res.innerHTML = `<p>Ao todo temos ${valores.length} números cadastrados.</p>`
+    res.innerHTML += `<p>O maior valor digitado foi ${maior}`
+    res.innerHTML += `<p>O menor valor digitado foi ${menor}`
+    res.innerHTML += `<p>A soma de todos os valores é ${soma}`
+    res.innerHTML += `<p>A média dos valores digitados é ${media}`
 }
+
