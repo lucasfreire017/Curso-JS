@@ -24,18 +24,25 @@ function inLista(n, l){
 // Adcionar os valores 
 function adcionar(){
     if(isNumero(num.value) && !inLista(num.value, valores)){
-       let item = document.createElement('option')
-       valores.push(num.value)
-       item.text = `Valor ${num.value} adicionado`
-       lista.appendChild(item)
-       num.value = ''
+        valores.push(Number(num.value))
+        let item = document.createElement('option') 
+        item.text = `Valor ${num.value} adicionado`
+        lista.appendChild(item)
+        res.innerHTML = ''
+        
     } else {
         window.alert('Valor inválido ou já encontrado na lista.')
     }
+    num.value = ''
+    num.focus()
 }
 
 function final(){
-    //Variável com maior valor digitado
+    if(valores.length == 0){
+        window.alert('Adcione valores antes de finalizar!')
+    }else{
+    
+        //Variável com maior valor digitado
     let maior = Math.max.apply(null, valores)
 
     //Variável com menor valor digitado
@@ -59,5 +66,6 @@ function final(){
     res.innerHTML += `<p>O menor valor digitado foi ${menor}`
     res.innerHTML += `<p>A soma de todos os valores é ${soma}`
     res.innerHTML += `<p>A média dos valores digitados é ${media}`
+    }
 }
 
